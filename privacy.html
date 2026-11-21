@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>מדיניות פרטיות – KeyClarify</title>
 <link rel="icon" href="icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--surface:#f5f8ff;--ink:#0f1e3d;--muted:#475569;--line:#dbe6fb;--brand:#1d4ed8;--brand-soft:#e3ecfd}
@@ -15,7 +18,11 @@ a{color:var(--brand)}
 header{padding:18px 0 8px}
 .logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
 .logo span{width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:Arial,sans-serif;font-weight:700}
-h1{font-size:36px;margin:24px 0 4px}
+h1{font-size:36px;margin:24px 0 4px;text-wrap:balance}
+h2{text-wrap:balance}
+main:focus{outline:none}
+.skip{position:absolute;right:-9999px}
+.skip:focus{right:16px;top:8px;z-index:10;background:var(--brand);color:#fff;padding:8px 14px;border-radius:8px;font-weight:700}
 .date{color:var(--muted);margin:0 0 28px}
 .tldr{background:var(--brand-soft);border-radius:14px;padding:18px 22px;font-size:19px;font-weight:700}
 h2{font-size:22px;margin:36px 0 8px}
@@ -29,8 +36,10 @@ code{direction:ltr;unicode-bidi:embed;background:var(--surface);border:1px solid
 </style>
 </head>
 <body>
+<a class="skip" href="#main">דילוג לתוכן הראשי</a>
 <div class="wrap">
-<header><a class="logo" href="index.html"><span>K</span>KeyClarify</a></header>
+<header><a class="logo" href="index.html"><span aria-hidden="true">K</span>KeyClarify</a></header>
+<main id="main" tabindex="-1">
 <h1>מדיניות פרטיות</h1>
 <p class="date">עדכון אחרון: 10 בנובמבר 2026 · גרסה 1.0</p>
 <div class="tldr">KeyClarify לא אוספת, לא שומרת ולא שולחת את מה שאתה מקליד. התוכנה לא מתחברת לאינטרנט בכלל.</div>
@@ -48,14 +57,15 @@ code{direction:ltr;unicode-bidi:embed;background:var(--surface);border:1px solid
 
 <h2>3. מה נשמר במחשב שלך</h2>
 <div class="tbl"><table>
-<tr><th>מה</th><th>איפה</th><th>למה</th></tr>
+<thead><tr><th scope="col">מה</th><th scope="col">איפה</th><th scope="col">למה</th></tr></thead>
+<tbody>
 <tr><td>ההגדרות שלך</td><td><code>%APPDATA%\TypeSaver\settings.json</code></td><td>כדי לזכור את הבחירות שלך</td></tr>
 <tr><td>מפתח הרישיון (כולל השם שמסרת ברכישה)</td><td>אותו קובץ</td><td>כדי לזכור שהתוכנה נרכשה</td></tr>
 <tr><td>אם בחרת "רישיון נגישות חינם": רק תאריך ההצהרה, <b>בלי שום פרט על המוגבלות</b></td><td>אותו קובץ</td><td>כדי לזכור שהתוכנה פתוחה לך. לא נשלח אלינו</td></tr>
 <tr><td>תאריך ההפעלה הראשונה</td><td>אותו קובץ, וגם <code>HKEY_CURRENT_USER\Software\TypeSaver</code></td><td>לחישוב תקופת הניסיון</td></tr>
 <tr><td>יומן טכני קצר (גרסה, הגדרות שנטענו, תקלות). <b>בלי הקשות ובלי טקסט</b></td><td><code>%APPDATA%\TypeSaver\typesaver.log</code></td><td>לאבחון תקלות. נשאר במחשב שלך</td></tr>
 <tr><td>הקלטות של שמות השפות</td><td><code>%APPDATA%\TypeSaver\voices</code></td><td>נוצרות במחשב שלך עם הקולות של Windows</td></tr>
-</table></div>
+</tbody></table></div>
 <p><b>ב-Mac</b> אותם פרטים נשמרים ב-<code>~/Library/Application Support/TypeSaver</code>, ותאריך ההפעלה הראשונה נשמר גם בהעדפות המערכת (<code>com.typesaver.app</code>). ב-Mac התוכנה מבקשת את ההרשאות "ניטור קלט" (כדי לזהות את שפת ההקלדה) ו"נגישות" (כדי לתקן גיבריש). אפשר לבטל אותן בכל רגע בהגדרות המערכת ← פרטיות ואבטחה.</p>
 
 <h2>4. רכישה</h2>
@@ -72,6 +82,7 @@ code{direction:ltr;unicode-bidi:embed;background:var(--surface);border:1px solid
 
 <h2>8. יצירת קשר</h2>
 <p>שאלות על פרטיות: <a href="https://github.com/guyroeicom-tech/keyclarify/issues">פתיחת פנייה בעמוד הפרויקט ב-GitHub</a></p>
+</main>
 </div>
 </body>
 </html>
